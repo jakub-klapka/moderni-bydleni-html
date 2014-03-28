@@ -1,0 +1,282 @@
+@import "global";
+
+@mixin main_content_typo() {
+
+	%iconfont {
+		@include iconfont();
+	}
+
+	font-size: 1.4rem;
+	color: $text_color;
+	text-align: justify;
+
+	p {
+		margin-bottom: $sections_padding;
+	}
+
+	#{headings(1,3)} {
+		text-align: center;
+		margin-bottom: 0.6em;
+	}
+
+	h1 {
+		font-size: 2.4rem;
+	}
+
+	.h2_wrap {
+		display: block;
+		text-align: center;
+		margin-bottom: 0.6em;
+	}
+
+	h2 {
+		@extend .sides_orange !optional;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		display: inline-block;
+		line-height: 1;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+	}
+
+	a {
+		color: $menu_active_color;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	blockquote {
+		display: block;
+		overflow: auto;
+		padding: $sections_padding 0;
+		margin: 0;
+		margin-bottom: $sections_padding;
+		border-top: 1px solid $borders_color;
+		border-bottom: 1px solid $borders_color;
+		font-weight: 300;
+		font-style: italic;
+		font-size: 2.4rem;
+		color: $menu_active_color;
+		text-align: center;
+
+		p {
+			margin-bottom: 0;
+
+			&::before {
+				content: '\201C';
+			}
+
+			&::after {
+				content: '\201D';
+			}
+		}
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.columns_2 {
+
+		&::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.column {
+			width: ( $main_content_width - $sections_padding ) / 2;
+			float: left;
+
+			&:first-of-type {
+				margin-right: $sections_padding;
+			}
+		}
+	}
+
+	.columns_3 {
+
+		&::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.column {
+			width: ( $main_content_width - ( $sections_padding * 2 ) ) / 3;
+			float: left;
+			margin-right: $sections_padding;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.float_half {
+		display: block;
+		width: ( $main_content_width - $sections_padding ) / 2;
+
+		blockquote,
+		p,
+		ul,
+		ol {
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+	}
+
+	.button {
+		a {
+			color: #FFF;
+		}
+	}
+
+	.link_with_dividers {
+		display: block;
+		padding: $sections_padding 0;
+		margin-bottom: $sections_padding;
+		border-top: 1px solid $borders_color;
+		border-bottom: 1px solid $borders_color;
+		text-align: center;
+		color: inherit;
+		text-decoration: none;
+		font-weight: 800;
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		overflow: auto;
+		transition-property: border-color, color;
+		transition-duration: $default_transition_duration;
+
+		&:hover {
+			color: $menu_active_color;
+			border-color: $menu_active_color;
+		}
+	}
+
+	ul {
+		list-style: none;
+
+		li {
+			margin-bottom: 0.5em;
+			text-align: left;
+			position: relative;
+
+			&::before {
+				@extend %iconfont;
+				content: '\e602';
+				font-size: 5px;
+				font-weight: normal;
+				position: absolute;
+				left: -12px;
+				top: 8px;
+			}
+		}
+	}
+
+	a.has_image {
+		position: relative;
+		display: block;
+
+		img {
+			position: relative;
+			display: block;
+			float: none;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: transparent;
+			transition: background-color $default_transition_duration;
+			z-index: 20;
+		}
+
+		&:hover::after {
+			background: rgba( $menu_active_color, $image_hover_opacity );
+		}
+
+	}
+
+	a.alignnone {
+		display: inline-block;
+	}
+
+	.a_wrap {
+		display: block;
+		text-align: center;
+	}
+
+	a.aligncenter {
+		display: inline-block;
+	}
+
+
+	/* =WordPress Core
+	-------------------------------------------------------------- */
+	.alignnone {
+		margin: 5px 20px 20px 0;
+	}
+
+	.aligncenter,
+	div.aligncenter {
+		display: block;
+		margin: $sections_padding auto $sections_padding auto;
+	}
+
+	.alignright {
+		float:right;
+		margin: $sections_padding 0 $sections_padding $sections_padding;
+	}
+
+	.alignleft {
+		float: left;
+		margin: $sections_padding $sections_padding $sections_padding 0;
+	}
+
+	.wp-caption {
+/*		max-width: 96%; *//* Image does not overflow the content area *//*
+		padding: 5px 3px 10px;*/
+		text-align: center;
+	}
+
+	/*.wp-caption.alignnone {
+		margin: 5px 20px 20px 0;
+	}
+
+	.wp-caption.alignleft {
+		margin: 5px 20px 20px 0;
+	}
+
+	.wp-caption.alignright {
+		margin: 5px 0 20px 20px;
+	}*/
+
+	/*.wp-caption img {
+		border: 0 none;
+		height: auto;
+		margin: 0;
+		max-width: 98.5%;
+		padding: 0;
+		width: auto;
+	}*/
+
+	.wp-caption p.wp-caption-text {
+		font-weight: 300;
+		font-style: italic;
+		font-size: 1.2rem;
+		margin: 0;
+		padding: 5px 4px 5px;
+	}
+
+
+}

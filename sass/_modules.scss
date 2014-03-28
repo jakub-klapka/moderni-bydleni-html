@@ -1,0 +1,177 @@
+@import "global";
+
+%sides_common {
+	$margin: 20px;
+	$triangle_width: 8px;
+	position: relative;
+	margin-left: $margin;
+	margin-right: $margin;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 2px;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-color: transparent transparent #FFF transparent;
+	}
+
+	&:before {
+		left: -$margin;
+		border-width: 0 0 $triangle_width $triangle_width;
+	}
+
+	&:after {
+		right: -$margin;
+		border-width: 0 $triangle_width $triangle_width 0;
+	}
+
+
+}
+
+.sides_white {
+	@extend %sides_common;
+}
+
+.sides_orange {
+	@extend %sides_common;
+
+	&:before,
+	&:after {
+		border-color: transparent transparent $red_heading_sides_color transparent;
+	}
+}
+
+%button_common {
+	padding: 5px 15px;
+
+	border-radius: 2px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 1.3rem;
+	font-weight: bold;
+	transition-property: background-color, color;
+	transition-duration: $default_transition_duration;
+}
+
+.button { //span
+	display: block;
+	position: relative;
+	overflow: auto;
+	text-align: center;
+
+	a {
+		@extend %button_common;
+		display: inline-block;
+		background: $text_color;
+		color: #FFF;
+		transition: background-color $default_transition_duration;
+
+		&:hover {
+			background: $menu_active_color;
+		}
+	}
+}
+
+.main_sidebar .posts,
+.related_articles.posts {
+	background: $borders_color;
+	padding-top: $sections_padding;
+	margin-bottom: $sections_padding;
+	position: relative;
+
+	.media {
+		display: table;
+		margin-bottom: 10px;
+
+		$image_width: 75px;
+		$image_height: 100px;
+
+		.featured_image {
+			display: block;
+			float: left;
+			width: $image_width;
+			position: relative;
+
+			img {
+				display: block;
+			}
+
+			&::after {
+				//hover overlay
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background: transparent;
+				transition: background-color $default_transition_duration;
+			}
+
+			&:hover::after {
+				background: rgba( $menu_active_color, $image_hover_opacity );
+			}
+		}
+
+		.featured {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: left;
+			padding-left: 10px;
+			width: ( $sidebar_width - ( $sections_padding * 2 ) - $image_width );
+			height: $image_height;
+		}
+	}
+
+	.title {
+		display: block;
+		font-size: 1.4rem;
+		font-weight: bold;
+		text-decoration: none;
+		color: inherit;
+		transition: color $default_transition_duration;
+		margin-bottom: 10px;
+
+		&:hover {
+			color: $menu_active_color;
+		}
+	}
+
+	time {
+		font-size: 1rem;
+		text-transform: uppercase;
+		display: block;
+	}
+
+	.comments {
+		@extend time;
+		font-weight: bold;
+		color: inherit;
+		transition: color $default_transition_duration;
+		text-decoration: none;
+
+		&:hover {
+			color: $menu_active_color;
+		}
+	}
+
+	p {
+		text-align: justify;
+		clear: left;
+	}
+
+	.link_to_post {
+		@extend %button_common;
+		display: inline-block;
+		background: $posts_widget_border_color;
+		color: inherit;
+
+		&:hover {
+			background: $menu_active_color;
+			color: #FFF;
+		}
+	}
+}

@@ -1,0 +1,89 @@
+@import "compass";
+@import "compass/utilities/sprites";
+
+/*
+Colors
+*/
+$partners_header_color: #262626;
+$partners_header_height: 48px;
+$borders_color: #eeeeee;
+$text_color: #262626;
+$menu_hover_bg: #eeeeee;
+$menu_active_color: #1ebce3;
+$red_heading_sides_color: #fc4349;
+$posts_widget_border_color: #e2e2e2;
+$placeholder_color: #aaaaaa;
+$image_hover_opacity: 0.75;
+
+/*
+Layout vars
+*/
+$page_wrap_width: 960px;
+$main_content_width: 630px;
+$sections_padding: 30px;
+$sidebar_width: ( $page_wrap_width - $main_content_width - $sections_padding );
+$breadcrumbs_height: 32px;
+$footer_height: 183px;
+
+/*
+Other
+*/
+$default_transition_duration: 300ms;
+
+@mixin iconfont() {
+	font-family: 'iconfont';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin content_block() {
+	margin-bottom: $sections_padding;
+	padding: 0 0 $sections_padding 0;
+	border-bottom: 1px solid $borders_color;
+}
+
+@mixin inherit_color_anchors() {
+	color: inherit;
+	text-decoration: none;
+	transition: all $default_transition_duration;
+
+	&:hover {
+		color: $menu_active_color;
+	}
+}
+
+@mixin image_anchor_hover() { //apply to a
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		top: 0;
+		background: rgba( $menu_active_color, $image_hover_opacity );
+		opacity: 0;
+		transition: opacity $default_transition_duration;
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
+}
+
+@mixin reset_button_style() {
+	border: none;
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+

@@ -1,0 +1,256 @@
+@import "global";
+
+%content_block {
+	@include content_block();
+}
+
+%inherit_color_anchors {
+	@include inherit_color_anchors();
+}
+
+%image_anchor_hover {
+	@include image_anchor_hover();
+}
+
+%reset_button_style {
+	@include reset_button_style();
+}
+
+%iconfont {
+	@include iconfont();
+}
+
+.article {
+
+	.featured_image {
+		display: block;
+		margin-bottom: $sections_padding;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.title {
+		margin-bottom: 10px;
+	}
+
+	.meta {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1rem;
+		margin-bottom: $sections_padding;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			transition: color $default_transition_duration;
+			font-weight: bold;
+
+			&:hover {
+				color: $menu_active_color;
+			}
+		}
+	}
+
+	.custom_ad {
+		padding-top: $sections_padding;
+		border-top: 1px solid $borders_color;
+	}
+
+	.share {
+		margin-bottom: $sections_padding;
+		padding: $sections_padding 0;
+		border-top: 1px solid $borders_color;
+		border-bottom: 1px solid $borders_color;
+		text-align: center;
+
+		.addthis_toolbox {
+			display: inline-block;
+			margin-top: 15px;
+
+			> a {
+				display: inline-block !important;
+				float: none;
+			}
+		}
+	}
+
+	.article_gallery {
+		@extend %content_block;
+		border-top: 1px solid $borders_color;
+		padding-top: $sections_padding;
+		$common_padding: 8px;
+
+		a {
+			@extend %inherit_color_anchors;
+		}
+
+		.image_area {
+			@extend %image_anchor_hover;
+			display: block;
+			width: 630px;
+			height: 420px;
+			position: relative;
+			margin-bottom: $common_padding;
+
+			img {
+				position: absolute;
+				opacity: 0;
+				transition: opacity $default_transition_duration;
+				height: 100%;
+
+				&.active {
+					opacity: 1;
+				}
+			}
+
+			.image_placeholder { //image placeholders
+				display: none;
+			}
+		}
+
+		$image_thumb_width: 103px;
+
+		.controls {
+			font-size: 0;
+			position: relative;
+
+			.image_thumb {
+				display: inline-block;
+				margin-right: $common_padding;
+				vertical-align: bottom;
+
+				&.active {
+					@extend %image_anchor_hover;
+
+					&::after {
+						opacity: 1;
+					}
+				}
+			}
+
+			$buttons_width: ( $main_content_width - ( $image_thumb_width * 4 ) - ( $common_padding * 4 ) );
+
+			.buttons {
+				display: table;
+				font-size: 1.4rem;
+				position: absolute;
+				top: - $common_padding;
+				right: 0;
+				width: $buttons_width;
+				$height: 33px;
+				height: $height;
+				border: 1px solid $borders_color;
+				border-top: none;
+				text-align: center;
+				line-height: $height - 1px;
+
+				.button_wrap {
+					display: table-cell;
+				}
+
+				button {
+					@extend %reset_button_style;
+					@extend %inherit_color_anchors;
+					height: $height - 1px;
+					width: 100%;
+					font-weight: bold;
+					font-size: 1rem;
+					text-transform: uppercase;
+					vertical-align: middle;
+					position: relative;
+
+					&.inactive {
+						cursor: default;
+
+						&:hover {
+							color: inherit;
+						}
+					}
+
+					&:focus {
+						outline: none;
+					}
+				}
+
+				%button_pseudoel {
+					@extend %iconfont;
+					font-size: 1.3rem;
+					vertical-align: top;
+				}
+
+				.previous {
+					border-right: 1px solid $borders_color;
+
+					&::before {
+						@extend %button_pseudoel;
+						content: '\e603\00a0';
+					}
+				}
+
+				.next {
+					&::after {
+						@extend %button_pseudoel;
+						content: '\00a0\e604';
+					}
+				}
+			}
+
+			.link_to_gallery {
+				display: inline-block;
+				width: $buttons_width;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				margin: 0;
+				color: #FFF;
+
+				& a:hover {
+					color: #FFF;
+				}
+			}
+		}
+	}
+
+	.related_articles {
+		font-size: 1.2rem;
+		text-align: center;
+
+		margin-bottom: ( 2 * $sections_padding ) + 1;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: - $sections_padding;
+			height: 1px;
+			border-bottom: 1px solid $borders_color;
+		}
+
+		&::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.post {
+			width: ( $main_content_width - ( $sections_padding * 3 ) ) / 2;
+			float: left;
+			margin-left: $sections_padding;
+			margin-top: $sections_padding;
+			margin-bottom: $sections_padding;
+		}
+
+		.featured_image { //name conflict
+			margin-bottom: 0;
+		}
+	}
+
+	.comments {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: none;
+		margin-bottom: $sections_padding;
+	}
+
+}

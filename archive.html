@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="cs-CZ" itemscope itemtype="http://schema.org/WebPage">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Lumiart.cz" itemprop="creator">
+	<title itemprop="name">Moderní bydlení</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/layout.css"/>
+	<link rel="stylesheet" href="css/archive.css"/>
+
+	<script type="text/javascript">
+		window.template_url = '';
+	</script>
+
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript" src="js/layout.js"></script>
+	<!-- DEFFERED SCRIPTS -->
+	<script type="text/javascript">
+		$(window).load(function(){
+			$('<link>').attr({'href': 'js/fancybox/jquery.fancybox.css', 'rel': 'stylesheet'}).appendTo('head');
+			var a = $.getScript( window.template_url + 'js/home_slider.js' );
+			var b = $.getScript( window.template_url + 'js/fancybox/jquery.fancybox.pack.js', function(){
+				$.getScript( window.template_url + 'js/fancybox_init.js' );
+			} );
+			$.when( a, b ).done(function(){
+				$('<script>').attr('src', '//connect.facebook.net/cs_CZ/all.js#xfbml=1').appendTo('body');
+				$('<script>').attr('src', '//platform.twitter.com/widgets.js').appendTo('body');
+				$('<script>').attr('src', 'https://apis.google.com/js/platform.js').appendTo('body');
+			});
+		});
+	</script>
+</head>
+<body>
+
+<section class="partners_header">
+	<div class="inner">
+		<header><h1>Partnerské weby</h1></header>
+		<ul class="links">
+			<li><a href="http://www.isedacky.cz" target="_blank"><img src="sample_content/isedacky.png" width="16" height="16" alt="Isedacky" />www.isedacky.cz</a></li>
+			<li><a href="http://www.masazni-kresla.cz" target="_blank"><img src="sample_content/masazni_kresla.png" width="16" height="16" alt="Masazni kresla" />www.masazni-kresla.cz</a></li>
+		</ul>
+	</div>
+</section>
+
+<header class="main_header" role="banner">
+	<a href="" class="header_image"><img src="images/header.png" width="960" height="129" alt="Logo moderní bydlení"/></a>
+
+	<nav role="navigation" class="main_nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		<ul>
+			<li><a href="" itemprop="url name">Lorem</a></li>
+			<li class="has_submenu"><a href="" itemprop="url name" id="submenu_label_1">Deserunt</a>
+				<ul itemscope itemtype="http://schema.org/SiteNavigationElement" aria-hidden="true" aria-labeledby="submenu_label_1">
+					<li><a href="" itemprop="url name">Lorem.</a></li>
+					<li><a href="" itemprop="url name">Iusto?</a></li>
+					<li><a href="" itemprop="url name">Quae!</a></li>
+					<li><a href="" itemprop="url name">Mollitia?</a></li>
+					<li><a href="" itemprop="url name">Ipsa.</a></li>
+					<li><a href="" itemprop="url name">Ipsa.</a></li>
+				</ul>
+			</li>
+			<li class="active"><a href="" itemprop="url name">Voluptatibus</a></li>
+			<li class="has_submenu"><span tabindex="0" itemprop="name" id="submenu_label_2">Praesentium</span>
+				<ul itemscope itemtype="http://schema.org/SiteNavigationElement" aria-hidden="true" aria-labeledby="submenu_label_2">
+					<li><a href="" itemprop="url name">Lorem.</a></li>
+					<li><a href="" itemprop="url name">Iusto?</a></li>
+					<li><a href="" itemprop="url name">Iusto?</a></li>
+				</ul>
+			</li>
+			<li class="has_submenu"><a href="" itemprop="url name" id="submenu_label_3">Reprehenderi</a>
+				<ul itemscope itemtype="http://schema.org/SiteNavigationElement" aria-hidden="true" aria-labeledby="submenu_label_3">
+					<li><a href="" itemprop="url name">Lorem.</a></li>
+					<li><a href="" itemprop="url name">Suscipit.</a></li>
+					<li><a href="" itemprop="url name">Dolor?</a></li>
+					<li><a href="" itemprop="url name">Possimus.</a></li>
+					<li><a href="" itemprop="url name">Unde.</a></li>
+					<li><a href="" itemprop="url name">Dolores!</a></li>
+					<li><a href="" itemprop="url name">Porro?</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<div class="page_wrap">
+
+	<div class="breadcrumbs_and_search">
+		<nav class="breadcrumbs" itemscope itemprop="breadcrumb">
+			<ol>
+				<li><a href="" itemprop="url">Lorem.</a></li>
+				<li><a href="" itemprop="url">Consequatur?</a></li>
+				<li><a href="" itemprop="url">Sed.</a></li>
+				<li><a href="" itemprop="url">Modi!</a></li>
+			</ol>
+		</nav>
+
+		<form class="search" action="">
+			<input type="search" placeholder="Hledat" />
+			<button type="submit" aria-label="Hledat">Hledat</button>
+		</form>
+	</div>
+
+	<article class="main_content archive" role="main" itemprop="mainContentOfPage">
+
+		<div class="h2_wrap"><h2>Název kategorie</h2></div>
+
+		<section class="posts">
+			<div class="item" itemscope itemtype="http://schema.org/Article">
+				<div class="image_area">
+					<a class="image" href=""><img src="sample_content/posts_featured_sample.jpg" alt="" width="150" height="200" itemprop="image"/></a>
+				</div>
+				<div class="description">
+					<a href="" class="title" itemprop="name url"><h1>Lorem ipsum dolor sit amet.</h1></a>
+					<p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque iste libero numquam optio quos
+						recusandae sed voluptates? Natus totam, veniam.</p>
+					<div class="meta">
+						<span class="button"><a href="">Celý článek</a></span>
+						<time datetime="" itemprop="datePublished">5 prosinec 2013</time> v <a href="">Kategorie</a>, <a href="">25 komentářů</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="image_area">
+					<a class="image" href=""><img src="sample_content/posts_featured_sample.jpg" alt="" width="150" height="200"/></a>
+				</div>
+				<div class="description">
+					<a href="" class="title"><h1>Lorem ipsum dolor sit amet.</h1></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque iste libero numquam optio quos
+						recusandae sed voluptates? Natus totam, veniam.</p>
+					<div class="meta">
+						<span class="button"><a href="">Celý článek</a></span>
+						<time datetime="">5 prosinec 2013</time> v <a href="">Kategorie</a>, <a href="">25 komentářů</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="image_area">
+					<a class="image" href=""><img src="sample_content/posts_featured_sample.jpg" alt="" width="150" height="200"/></a>
+				</div>
+				<div class="description">
+					<a href="" class="title"><h1>Lorem ipsum dolor sit amet.</h1></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque iste libero numquam optio quos
+						recusandae sed voluptates? Natus totam, veniam.</p>
+					<div class="meta">
+						<span class="button"><a href="">Celý článek</a></span>
+						<time datetime="">5 prosinec 2013</time> v <a href="">Kategorie</a>, <a href="">25 komentářů</a>
+					</div>
+				</div>
+			</div>
+
+
+
+		</section>
+
+		<section class="custom_ad">
+			<div class="item">
+				<a href="" class="image"><img src="sample_content/custom_ad_sample_image.jpg" alt="" width="300" height="150"/></a>
+				<a href="" class="title"><h3>Lorem ipsum dolor sit amet.</h3></a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis cum deleniti
+					exercitationem ipsum molestiae nulla obcaecati officia officiis quasi quos repellat reprehenderit,
+					sed, sint, tempore velit voluptatibus? Ab dolores expedita ipsa laudantium officiis perspiciatis
+					quis quisquam rem similique voluptas!</p>
+				<span class="button"><a href="">Více informací</a></span>
+			</div>
+			<div class="item">
+				<a href="" class="image"><img src="sample_content/custom_ad_sample_image.jpg" alt="" width="300" height="150"/></a>
+				<a href="" class="title"><h3>Lorem ipsum dolor sit amet.</h3></a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis cum deleniti
+					exercitationem ipsum molestiae nulla obcaecati officia officiis quasi quos repellat reprehenderit,
+					sed, sint, tempore velit voluptatibus? Ab dolores expedita ipsa laudantium officiis perspiciatis
+					quis quisquam rem similique voluptas!</p>
+				<span class="button"><a href="">Více informací</a></span>
+			</div>
+
+		</section>
+
+		<section class="posts">
+			<div class="item">
+				<div class="image_area">
+					<a class="image" href=""><img src="sample_content/posts_featured_sample.jpg" alt="" width="150" height="200"/></a>
+				</div>
+				<div class="description">
+					<a href="" class="title"><h1>Lorem ipsum dolor sit amet.</h1></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque iste libero numquam optio quos
+						recusandae sed voluptates? Natus totam, veniam.</p>
+					<div class="meta">
+						<span class="button"><a href="">Celý článek</a></span>
+						<time datetime="">5 prosinec 2013</time> v <a href="">Kategorie</a>, <a href="">25 komentářů</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="image_area">
+					<a class="image" href=""><img src="sample_content/posts_featured_sample.jpg" alt="" width="150" height="200"/></a>
+				</div>
+				<div class="description">
+					<a href="" class="title"><h1>Lorem ipsum dolor sit amet.</h1></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque iste libero numquam optio quos
+						recusandae sed voluptates? Natus totam, veniam.</p>
+					<div class="meta">
+						<span class="button"><a href="">Celý článek</a></span>
+						<time datetime="">5 prosinec 2013</time> v <a href="">Kategorie</a>, <a href="">25 komentářů</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="image_area">
+					<a class="image" href=""><img src="sample_content/posts_featured_sample.jpg" alt="" width="150" height="200"/></a>
+				</div>
+				<div class="description">
+					<a href="" class="title"><h1>Lorem ipsum dolor sit amet.</h1></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque iste libero numquam optio quos
+						recusandae sed voluptates? Natus totam, veniam.</p>
+					<div class="meta">
+						<span class="button"><a href="">Celý článek</a></span>
+						<time datetime="">5 prosinec 2013</time> v <a href="">Kategorie</a>, <a href="">25 komentářů</a>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="custom_ad">
+			<div class="item">
+				<a href="" class="image"><img src="sample_content/custom_ad_sample_image.jpg" alt="" width="300" height="150"/></a>
+				<a href="" class="title"><h3>Lorem ipsum dolor sit amet.</h3></a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis cum deleniti
+					exercitationem ipsum molestiae nulla obcaecati officia officiis quasi quos repellat reprehenderit,
+					sed, sint, tempore velit voluptatibus? Ab dolores expedita ipsa laudantium officiis perspiciatis
+					quis quisquam rem similique voluptas!</p>
+				<span class="button"><a href="">Více informací</a></span>
+			</div>
+			<div class="item">
+				<a href="" class="image"><img src="sample_content/custom_ad_sample_image.jpg" alt="" width="300" height="150"/></a>
+				<a href="" class="title"><h3>Lorem ipsum dolor sit amet.</h3></a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis cum deleniti
+					exercitationem ipsum molestiae nulla obcaecati officia officiis quasi quos repellat reprehenderit,
+					sed, sint, tempore velit voluptatibus? Ab dolores expedita ipsa laudantium officiis perspiciatis
+					quis quisquam rem similique voluptas!</p>
+				<span class="button"><a href="">Více informací</a></span>
+			</div>
+
+		</section>
+
+		<section class="posts">
+			<div class="item">
+				<div class="image_area">
+					<a class="image" href=""><img src="sample_content/posts_featured_sample.jpg" alt="" width="150" height="200"/></a>
+				</div>
+				<div class="description">
+					<a href="" class="title"><h1>Lorem ipsum dolor sit amet.</h1></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque iste libero numquam optio quos
+						recusandae sed voluptates? Natus totam, veniam.</p>
+					<div class="meta">
+						<span class="button"><a href="">Celý článek</a></span>
+						<time datetime="">5 prosinec 2013</time> v <a href="">Kategorie</a>, <a href="">25 komentářů</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="image_area">
+					<a class="image" href=""><img src="sample_content/posts_featured_sample.jpg" alt="" width="150" height="200"/></a>
+				</div>
+				<div class="description">
+					<a href="" class="title"><h1>Lorem ipsum dolor sit amet.</h1></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque iste libero numquam optio quos
+						recusandae sed voluptates? Natus totam, veniam.</p>
+					<div class="meta">
+						<span class="button"><a href="">Celý článek</a></span>
+						<time datetime="">5 prosinec 2013</time> v <a href="">Kategorie</a>, <a href="">25 komentářů</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="image_area">
+					<a class="image" href=""><img src="sample_content/posts_featured_sample.jpg" alt="" width="150" height="200"/></a>
+				</div>
+				<div class="description">
+					<a href="" class="title"><h1>Lorem ipsum dolor sit amet.</h1></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque iste libero numquam optio quos
+						recusandae sed voluptates? Natus totam, veniam.</p>
+					<div class="meta">
+						<span class="button"><a href="">Celý článek</a></span>
+						<time datetime="">5 prosinec 2013</time> v <a href="">Kategorie</a>, <a href="">25 komentářů</a>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<div class="pagination">
+			<a class="previous" href="">Starší</a>
+			<div class="pages">
+				<a class="lowest" href="">1</a>
+				<a class="page" href="">10</a>
+				<a class="page" href="">11</a>
+				<a class="page" href="">12</a>
+				<span class="page active">13</span>
+				<a class="page" href="">14</a>
+				<a class="page" href="">15</a>
+				<a class="page" href="">16</a>
+				<a class="highest" href="">35</a>
+			</div>
+			<a class="next" href="">Novější</a>
+		</div>
+
+	</article>
+
+	<aside class="main_sidebar" role="complementary">
+
+		<section class="follow_buttons widget">
+			<div class="fb-follow" data-href="http://www.facebook.com/lumiart" data-colorscheme="light" data-layout="button_count" data-show-faces="false"></div>
+			<a href="https://twitter.com/computer_zive" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false">Follow @computer_zive</a>
+			<div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/115691145532305808065" data-rel="publisher"></div>
+		</section>
+
+		<section class="newsletter widget">
+			<h2>Newsletter</h2>
+			<form action="">
+				<input type="email" placeholder="E-mail" aria-label="Newsletter e-mail" />
+				<button type="submit">Odeslat</button>
+			</form>
+		</section>
+
+		<section class="posts widget">
+			<h2>Naše články</h2>
+			<div class="post" itemscope itemtype="http://schema.org/Article">
+				<div class="media">
+					<a class="featured_image" href="">
+						<img src="sample_content/sidebar_posts_thumbnail.jpg" alt="" width="75" height="100" itemprop="image"/>
+					</a>
+					<div class="featured">
+						<a class="title" href="" itemprop="name url">Lorem ipsum dolor sit. Amet</a>
+						<time datetime="2008-02-14" itemprop="datePublished">5 prosinec 2013</time>
+						<a href="" class="comments">50 komentářů</a>
+					</div>
+				</div>
+				<p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ducimus exercitationem, ipsam magni
+					nihil possimus quam quo! Earum, omnis veniam! Fuga harum hic in ratione. Magni perspiciatis
+					provident quam quibusdam.</p>
+				<a class="link_to_post" href="">Celý článek</a>
+			</div>
+			<div class="post">
+				<div class="media">
+					<a class="featured_image" href="">
+						<img src="sample_content/sidebar_posts_thumbnail.jpg" alt="" width="75" height="100"/>
+					</a>
+					<div class="featured">
+						<a class="title" href="">Lorem ipsum dolor sit.</a>
+						<time>5 prosinec 2013</time>
+						<a href="" class="comments">50 komentářů</a>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ducimus exercitationem, ipsam magni
+					nihil possimus quam quo! Earum, omnis veniam! Fuga harum hic in ratione. Magni perspiciatis
+					provident quam quibusdam.</p>
+				<a class="link_to_post" href="">Celý článek</a>
+			</div>
+			<div class="post">
+				<div class="media">
+					<a class="featured_image" href="">
+						<img src="sample_content/sidebar_posts_thumbnail.jpg" alt="" width="75" height="100"/>
+					</a>
+					<div class="featured">
+						<a class="title" href="">Lorem ipsum dolor</a>
+						<time>5 prosinec 2013</time>
+						<a href="" class="comments">50 komentářů</a>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ducimus exercitationem, ipsam magni
+					nihil possimus quam quo! Earum, omnis veniam! Fuga harum hic in ratione. Magni perspiciatis
+					provident quam quibusdam.</p>
+				<a class="link_to_post" href="">Celý článek</a>
+			</div>
+
+
+		</section>
+
+		<section class="widget">
+			<h2>Doporučujeme</h2>
+			<img src="sample_content/sample_ad.png" alt="" width="300" height="250" style="display: block"/>
+		</section>
+
+		<section class="posts widget">
+			<h2>Nové články</h2>
+			<div class="post">
+				<div class="media">
+					<a class="featured_image" href="">
+						<img src="sample_content/sidebar_posts_thumbnail.jpg" alt="" width="75" height="100"/>
+					</a>
+					<div class="featured">
+						<a class="title" href="">Lorem ipsum dolor sit. Amet</a>
+						<time>5 prosinec 2013</time>
+						<a href="" class="comments">50 komentářů</a>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ducimus exercitationem, ipsam magni
+					nihil possimus quam quo! Earum, omnis veniam! Fuga harum hic in ratione. Magni perspiciatis
+					provident quam quibusdam.</p>
+				<a class="link_to_post" href="">Celý článek</a>
+			</div>
+			<div class="post">
+				<div class="media">
+					<a class="featured_image" href="">
+						<img src="sample_content/sidebar_posts_thumbnail.jpg" alt="" width="75" height="100"/>
+					</a>
+					<div class="featured">
+						<a class="title" href="">Lorem ipsum dolor sit.</a>
+						<time>5 prosinec 2013</time>
+						<a href="" class="comments">50 komentářů</a>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ducimus exercitationem, ipsam magni
+					nihil possimus quam quo! Earum, omnis veniam! Fuga harum hic in ratione. Magni perspiciatis
+					provident quam quibusdam.</p>
+				<a class="link_to_post" href="">Celý článek</a>
+			</div>
+			<div class="post">
+				<div class="media">
+					<a class="featured_image" href="">
+						<img src="sample_content/sidebar_posts_thumbnail.jpg" alt="" width="75" height="100"/>
+					</a>
+					<div class="featured">
+						<a class="title" href="">Lorem ipsum dolor</a>
+						<time>5 prosinec 2013</time>
+						<a href="" class="comments">50 komentářů</a>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ducimus exercitationem, ipsam magni
+					nihil possimus quam quo! Earum, omnis veniam! Fuga harum hic in ratione. Magni perspiciatis
+					provident quam quibusdam.</p>
+				<a class="link_to_post" href="">Celý článek</a>
+			</div>
+
+
+		</section>
+
+	</aside>
+
+	<section class="custom_ad footer main_content">
+		<div class="item">
+			<a href="" class="image"><img src="sample_content/custom_ad_sample_image.jpg" alt="" width="300" height="150"/></a>
+			<a href="" class="title"><h3>Lorem ipsum dolor sit amet.</h3></a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis cum deleniti
+				exercitationem ipsum molestiae nulla obcaecati officia officiis quasi quos repellat reprehenderit,
+				sed, sint, tempore velit voluptatibus? Ab dolores expedita ipsa laudantium officiis perspiciatis
+				quis quisquam rem similique voluptas!</p>
+			<span class="button"><a href="">Více informací</a></span>
+		</div>
+		<div class="item">
+			<a href="" class="image"><img src="sample_content/custom_ad_sample_image.jpg" alt="" width="300" height="150"/></a>
+			<a href="" class="title"><h3>Lorem ipsum dolor sit amet.</h3></a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis cum deleniti
+				exercitationem ipsum molestiae nulla obcaecati officia officiis quasi quos repellat reprehenderit,
+				sed, sint, tempore velit voluptatibus? Ab dolores expedita ipsa laudantium officiis perspiciatis
+				quis quisquam rem similique voluptas!</p>
+			<span class="button"><a href="">Více informací</a></span>
+		</div>
+		<div class="item">
+			<a href="" class="image"><img src="sample_content/custom_ad_sample_image.jpg" alt="" width="300" height="150"/></a>
+			<a href="" class="title"><h3>Lorem ipsum dolor sit amet.</h3></a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis cum deleniti
+				exercitationem ipsum molestiae nulla obcaecati officia officiis quasi quos repellat reprehenderit,
+				sed, sint, tempore velit voluptatibus? Ab dolores expedita ipsa laudantium officiis perspiciatis
+				quis quisquam rem similique voluptas!</p>
+			<span class="button"><a href="">Více informací</a></span>
+		</div>
+
+	</section>
+
+</div>
+
+<footer class="main_footer" role="contentinfo">
+	<div class="inner">
+		<section class="about_us">
+			<h2>O nás</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi dignissimos, id magni possimus
+				qui quia quidem quisquam recusandae ullam. Corporis dolorum eius inventore nostrum officia quidem,
+				ratione recusandae reprehenderit?</p>
+		</section>
+		<div class="copyright">
+			&copy; <span itemprop="copyrightYear">2013</span> moderni-bydleni.cz<br/>
+			Design and code by <a href="http://www.lumiart.cz" target="_blank" itemprop="creator">Lumiart.cz</a>
+		</div>
+	</div>
+</footer>
+
+</body>
+
+</html>

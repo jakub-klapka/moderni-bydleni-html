@@ -1,0 +1,229 @@
+@import "global";
+
+%reset_button_style {
+	@include reset_button_style();
+}
+
+%iconfont {
+	@include iconfont();
+}
+
+.article_gallery_content {
+	width: auto;
+	float: none;
+
+	.back_to_article {
+		//extends link with dividers
+
+		&::before {
+			content: '\003c\00a0';
+		}
+	}
+
+	$image_area_width: 960px;
+	$image_area_height: 640px;
+
+	.image_area {
+		width: $image_area_width;
+		height: $image_area_height;
+		text-align: center;
+		position: relative;
+
+		img {
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			transition: opacity $default_transition_duration;
+			z-index: 10;
+
+			&.active {
+				opacity: 1;
+			}
+		}
+
+		.image_placeholder {
+			display: none;
+		}
+
+		%buttons {
+			@extend %reset_button_style;
+			display: block;
+			position: absolute;
+			z-index: 100;
+			top: 0;
+			bottom: 0;
+			width: $image_area_width / 2;
+			font-size: 0;
+			color: transparent;
+			cursor: pointer;
+
+			$buttons_size: 34px;
+
+			&::before {
+				@extend %iconfont;
+				color: $text_color;
+				display: block;
+				position: absolute;
+				top: 50%;
+				margin-top: -($buttons_size/2);
+				width: $buttons_size;
+				height: $buttons_size;
+				font-size: 12px;
+				padding-top: 10px;
+				text-align: center;
+				background: #FFF;
+				border: 1px solid $borders_color;
+				opacity: 0;
+				transition: opacity, $default_transition_duration;
+				box-sizing: border-box;
+			}
+
+			&:hover::before {
+				opacity: 1;
+			}
+
+			&:focus {
+				outline: none;
+			}
+
+			&.inactive {
+				display: none;
+			}
+		}
+
+		.left {
+			@extend %buttons;
+			left: 0;
+
+			&::before {
+				left: 0;
+				content: '\e603';
+			}
+		}
+
+		.right {
+			@extend %buttons;
+			right: 0;
+
+			&::before {
+				content: '\e604';
+				right: 0;
+			}
+		}
+	}
+
+	.controls {
+		$controls_height: 134px;
+		$buttons_width: 65px;
+		$controls_inner_width: $page_wrap_width - 2;
+		$controls_inner_height: $controls_height - 2;
+		border: 1px solid $borders_color;
+		height: $controls_height;
+		font-size: 0;
+
+		%buttons {
+			@extend %reset_button_style;
+			width: 65px;
+			height: $controls_inner_height;
+
+			&::before {
+				@extend %iconfont;
+				font-size: 3rem;
+				color: $text_color;
+				transition: color $default_transition_duration;
+			}
+
+			&:hover::before {
+				color: $menu_active_color;
+			}
+
+			&.inactive:hover {
+				cursor: default;
+
+				&::before {
+					color: $text_color;
+				}
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.left {
+			@extend %buttons;
+			float: left;
+			border-right: 1px solid $borders_color;
+
+			&::before {
+				content: '\e603';
+			}
+		}
+
+		.right {
+			@extend %buttons;
+			float: right;
+			border-left: 1px solid $borders_color;
+
+			&::before {
+				content: '\e604';
+			}
+		}
+
+		$thumb_width: 100px;
+		$thumb_height: 100px;
+
+		.thumbs_window {
+			display: inline-block;
+			width: $controls_inner_width - ( $buttons_width * 2 );
+			height: $controls_inner_height;
+			overflow: hidden;
+		}
+
+		$gap_between_thumbs: ( $page_wrap_width - 2 - ( 7 * $thumb_width ) - ( 2 * $buttons_width ) ) / 8 ;
+
+		.thumbs_wrap {
+			width: 9999px;
+			height: $controls_inner_height;
+			line-height: $controls_inner_height;
+			transition: margin $default_transition_duration;
+
+			a { //image wrap
+				display: inline-block;
+				height: $thumb_height;
+				vertical-align: middle;
+				margin-left: $gap_between_thumbs;
+				position: relative;
+
+				&::after {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					right: 0;
+					top: 0;
+					background: rgba( $menu_active_color, 0.75 );
+					transition: opacity $default_transition_duration;
+					opacity: 0;
+				}
+
+				&.active::after {
+					opacity: 1;
+				}
+			}
+
+			.thumb_placeholder {
+				display: none;
+			}
+		}
+	}
+}
+
+.article_gallery.custom_ad {
+	margin-top: $sections_padding;
+	border-top: 1px solid $borders_color;
+	padding-top: $sections_padding;
+}

@@ -1,0 +1,2 @@
+full size image: 630 width
+half size image: 300 width

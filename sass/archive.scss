@@ -1,0 +1,110 @@
+@import "global";
+
+.archive {
+
+	.h2_wrap {
+		margin-bottom: $sections_padding;
+	}
+
+	.pagination {
+		padding: $sections_padding 0;
+		border-top: 1px solid $borders_color;
+		border-bottom: 1px solid $borders_color;
+		text-align: center;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		transition: color $default_transition_duration;
+
+		&:hover {
+			color: $menu_active_color;
+		}
+	}
+
+	.button {
+		a {
+			transition: background-color $default_transition_duration;
+			&:hover {
+				color: #FFF;
+			}
+		}
+	}
+
+	%next_prev_common {
+		font-size: 1.8rem;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+
+	.previous {
+		@extend %next_prev_common;
+		display: block;
+		float: left;
+
+		&::before {
+			content: '\003c\00a0';
+		}
+	}
+
+	.next {
+		@extend %next_prev_common;
+		display: block;
+		float: right;
+
+		&::after {
+			content: '\00a0\003e';
+		}
+	}
+
+	.pages {
+		display: inline-block; //centered by parent
+
+		.active {
+			color: $menu_active_color;
+			font-weight: bold;
+
+			&::after {
+				color: $text_color;
+			}
+		}
+
+		.page {
+
+			&::after {
+				content: '\00a0.';
+			}
+
+
+		}
+
+		.lowest {
+			&::after {
+				content: '\00a0.\00a0.\00a0.';
+			}
+		}
+
+		.highest {
+			&::after {
+				content: none;
+			}
+			&::before {
+				content: '.\00a0.\00a0';
+			}
+		}
+
+		a:hover {
+			&::after,
+			&::before {
+				color: $text_color;
+			}
+		}
+
+		.no_dots:after { //if active is last
+			content: none;
+		}
+
+	}
+
+}

@@ -1,0 +1,173 @@
+@import "global";
+
+%iconfont {
+	@include iconfont();
+}
+
+.home {
+
+	.slider {
+		margin-bottom: $sections_padding;
+
+		.images {
+			overflow: hidden;
+			height: 263px;
+		}
+
+		.images_window {
+			//width: 9999px; is set in html
+			font-size: 0;
+			transition: margin 1s;
+			margin-left: 0px;
+
+			a {
+				display: inline-block;
+
+				img {
+					display: block;
+				}
+			}
+		}
+
+		.control {
+			width: 100%;
+			$control_height: 33px;
+			height: $control_height;
+			border: 1px solid $borders_color;
+			border-top: none;
+			text-align: center;
+
+			%text_fields {
+				text-decoration: none;
+				color: $text_color;
+				font-size: 1.3rem;
+				line-height: $control_height;
+				opacity: 1;
+				transition-property: color, opacity;
+				transition-duration: $default_transition_duration, $default_transition_duration / 2; //have to corespond with js
+
+				&:hover {
+					color: $menu_active_color;
+				}
+
+				&.fade_out {
+					opacity: 0;
+				}
+			}
+
+			.category {
+				@extend %text_fields;
+				display: block;
+				float: left;
+				padding: 0 15px;
+				border-right: 1px solid $borders_color;
+			}
+
+			.title {
+				@extend %text_fields;
+				font-weight: bold;
+				display: inline-block;
+			}
+
+			.static {
+				display: block;
+				font-size: 0;
+				float: right;
+			}
+
+			%button_reset {
+				border: none;
+				background: none;
+				padding: 0;
+				margin: 0;
+				font-size: 0;
+				color: transparent;
+			}
+
+			.boxes {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 0;
+				padding-left: 12px; //hardcoded in html
+				padding-right: 12px; //hardcoded in html
+				border-left: 1px solid $borders_color;
+				height: $control_height;
+				line-height: $control_height;
+
+				button {
+					@extend %button_reset;
+					display: inline-block;
+					$button_size: 8px; //hardcoded in html
+					width: $button_size;
+					height: $button_size;
+					background: $text_color;
+					line-height: $button_size;
+					margin-right: $button_size;
+					transition: background-color $default_transition_duration;
+
+					&:last-of-type {
+						margin-right: 0;
+					}
+
+					&.active {
+						background: $menu_active_color;
+					}
+
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+
+			%left_right_buttons {
+				@extend %iconfont;
+				display: inline-block;
+				width: $control_height; //hardcoded in html
+				height: $control_height;
+				vertical-align: middle;
+				$icon_size: 11px;
+				line-height: $icon_size;
+				border-left: 1px solid $borders_color;
+
+				&::before {
+					color: $text_color;
+					font-size: $icon_size;
+					vertical-align: middle;
+					transition: color $default_transition_duration;
+				}
+
+				&:hover::before {
+					color: $menu_active_color
+				}
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			.left {
+				@extend %button_reset;
+				@extend %left_right_buttons;
+
+				&::before {
+					content: '\e603';
+				}
+			}
+
+			.right {
+				@extend %button_reset;
+				@extend %left_right_buttons;
+
+				&::before {
+					content: '\e604';
+				}
+			}
+		}
+
+	}
+
+	.link_to_archive {
+		margin-bottom: 0;
+	}
+
+}
